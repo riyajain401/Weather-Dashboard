@@ -15,6 +15,7 @@ Website link:"(https://skycastweatherdashboard.netlify.app/)"
 
   
 ✨ Features
+
 🌍 Search weather for any city worldwide
 
 🌡️ Real-time temperature and "feels like" data
