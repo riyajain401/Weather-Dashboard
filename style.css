@@ -1,0 +1,387 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    padding:20px;
+    background:linear-gradient(
+        135deg,
+        #0f2027,
+        #203a43,
+        #2c5364
+    );
+    background-size:400% 400%;
+    animation:bgAnimation 12s ease infinite;
+    color:#fff;
+    transition:.4s;
+}
+
+@keyframes bgAnimation{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+body.light-mode{
+    background:#f5f5f5;
+    color:#222;
+}
+
+/* =========================
+   WEATHER CARD
+========================= */
+
+.weather-card{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    box-shadow:0 8px 32px rgba(0,0,0,.3);
+    text-align:center;
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+body.light-mode .weather-card{
+    background:#fff;
+    color:#000;
+}
+
+.weather-card h1{
+    margin-bottom:20px;
+}
+
+.weather-card h2{
+    text-align:left;
+    margin:25px 0 15px;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.search-box input{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    font-size:16px;
+}
+
+.search-box button{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    background:#ff9800;
+    color:#fff;
+    transition:.3s;
+}
+
+.search-box button:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+   DARK MODE BUTTON
+========================= */
+
+#themeBtn{
+    padding:10px 20px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* =========================
+   CLOCK
+========================= */
+
+#clock{
+    margin:15px 0;
+    font-size:20px;
+}
+
+/* =========================
+   WEATHER
+========================= */
+
+#icon{
+    width:120px;
+    animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+#temp{
+    font-size:70px;
+    font-weight:bold;
+}
+
+#description{
+    text-transform:capitalize;
+    margin-bottom:20px;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.details{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.box{
+    padding:20px;
+    border-radius:20px;
+    background:rgba(255,255,255,.12);
+    transition:.3s;
+}
+
+.box:hover{
+    transform:translateY(-5px);
+}
+
+.box i{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader{
+    display:none;
+    width:50px;
+    height:50px;
+    margin:20px auto;
+    border:5px solid rgba(255,255,255,.3);
+    border-top:5px solid #00dbde;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================
+   HOURLY FORECAST
+========================= */
+
+.hourly-scroll{
+    display:flex;
+    gap:15px;
+    overflow-x:auto;
+    padding:15px 0;
+    scroll-behavior:smooth;
+}
+
+.hour-card{
+    min-width:140px;
+    padding:18px;
+    border-radius:18px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.15);
+    flex-shrink:0;
+    transition:.3s;
+}
+
+.hour-card:hover{
+    transform:translateY(-8px);
+}
+
+/* =========================
+   7 DAY FORECAST
+========================= */
+
+#dailyForecast{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(160px,1fr));
+    gap:20px;
+}
+
+.day-card{
+    padding:20px;
+    border-radius:20px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.15);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.day-card:hover{
+    transform:translateY(-8px);
+}
+
+/* =========================
+   SELECTED DAY
+========================= */
+
+#selectedDayForecast{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(140px,1fr));
+    gap:15px;
+}
+
+.detail-card{
+    padding:18px;
+    border-radius:18px;
+    background:rgba(255,255,255,.12);
+    transition:.3s;
+}
+
+.detail-card:hover{
+    transform:translateY(-5px);
+}
+
+/* =========================
+   WEATHER INSIGHTS
+========================= */
+
+#extraInfo{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+#extraInfo div{
+    padding:20px;
+    border-radius:20px;
+    background:rgba(255,255,255,.12);
+    transition:.3s;
+}
+
+#extraInfo div:hover{
+    transform:translateY(-5px);
+}
+
+/* =========================
+   DATE SEARCH
+========================= */
+
+.date-search{
+    margin-top:20px;
+}
+
+.date-search input{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+}
+
+.date-search button{
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    margin-top:30px;
+    padding:15px;
+    text-align:center;
+    border-radius:12px;
+    background:rgba(255,255,255,.1);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .details{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:768px){
+
+    .details{
+        grid-template-columns:1fr;
+    }
+
+    #extraInfo{
+        grid-template-columns:1fr;
+    }
+
+    #dailyForecast{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:480px){
+
+    .weather-card{
+        padding:15px;
+    }
+
+    #temp{
+        font-size:50px;
+    }
+
+    #dailyForecast{
+        grid-template-columns:1fr;
+    }
+
+    .hour-card{
+        min-width:110px;
+    }
+
+    .search-box{
+        flex-wrap:wrap;
+    }
+
+    .search-box input{
+        width:100%;
+    }
+}
