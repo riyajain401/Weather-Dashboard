@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weather Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="weather-card">
+
+<h1>🌦 Weather Dashboard</h1>
+
+<br>
+
+<div class="search-box">
+
+<input
+type="text"
+id="city"
+placeholder="Enter City Name">
+
+<button onclick="getWeather()">
+<i class="fas fa-search"></i>
+</button>
+
+<button onclick="getLocationWeather()">
+📍
+</button>
+
+</div>
+
+<br>
+
+<button id="themeBtn">
+🌙 Dark Mode
+</button>
+
+<h3 id="clock"></h3>
+
+<div class="loader" id="loader"></div>
+
+<div id="weatherInfo">
+
+<img id="icon" alt="Weather Icon">
+
+<h2 id="cityName"></h2>
+
+<h1 id="temp"></h1>
+
+<p id="description"></p>
+
+<!-- Weather Details -->
+
+<div class="details">
+
+<div class="box">
+<i class="fas fa-tint"></i>
+<h3 id="humidity"></h3>
+<p>Humidity</p>
+</div>
+
+<div class="box">
+<i class="fas fa-wind"></i>
+<h3 id="wind"></h3>
+<p>Wind</p>
+</div>
+
+<div class="box">
+<i class="fas fa-gauge"></i>
+<h3 id="pressure"></h3>
+<p>Pressure</p>
+</div>
+
+</div>
+
+<!-- 24 Hour Forecast -->
+
+<h2>⏰ 24-Hour Forecast</h2>
+
+<div id="hourlyForecast" class="hourly-scroll"></div>
+
+<!-- 7 Day Forecast -->
+
+<h2>📅 7-Day Forecast</h2>
+
+<div id="dailyForecast" class="daily-scroll"></div>
+
+<!-- Date Search -->
+
+<div class="date-search">
+
+<h3>📆 Check Weather for a next 15 days.</h3>
+<br>
+
+<input type="date" id="forecastDate">
+
+<button onclick="searchForecastDate()">
+Check Weather
+</button>
+
+<div id="dateWeatherResult"></div>
+
+</div>
+
+<!-- Selected Day Details -->
+
+<h2>📊 Selected Day Details</h2>
+
+<div id="selectedDayForecast"></div>
+
+<!-- Extra Weather Info -->
+
+<h2>🌍 Weather Insights</h2>
+
+<div id="extraInfo">
+
+<div id="sunrise" class="info-card"></div>
+
+<div id="sunset" class="info-card"></div>
+
+<div id="uvIndex" class="info-card"></div>
+
+<div id="airQuality" class="info-card"></div>
+
+<div id="feelsLike" class="info-card"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer class="footer">
+<p>© 2026 Weather Dashboard | Developed by Riya Jain</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
