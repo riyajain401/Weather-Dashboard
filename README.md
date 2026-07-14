@@ -16,12 +16,21 @@ Website link:"(https://skycastweatherdashboard.netlify.app/)"
   
 ✨ Features
 🌍 Search weather for any city worldwide
+
 🌡️ Real-time temperature and "feels like" data
+
 ☁️ Current weather conditions with dynamic icons
+
 💧 Humidity, pressure, and visibility information
+
 🌬️ Wind speed and direction
+
 🌅 Sunrise and sunset timings
+
 📱 Fully responsive design
+
 ⚡ Fast and efficient API integration
+
 ❌ Error handling for invalid city names
+
 🎨 Clean and modern user interf
