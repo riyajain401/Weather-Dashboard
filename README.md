@@ -12,6 +12,8 @@ Website link:"(https://skycastweatherdashboard.netlify.app/)"
 - 🌦️ Weather API – Fetches real-time weather data
 - 📡 Fetch API – Handles asynchronous API requests
 - 📱 Responsive Design – Optimized for desktop, tablet, and mobile devices
+
+  
 ✨ Features
 🌍 Search weather for any city worldwide
 🌡️ Real-time temperature and "feels like" data
